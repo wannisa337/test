@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5.1 (Python 3.13.0 on win32)" generated="2026-11-05T06:50:58.401828" rpa="false" schemaversion="5">
+<suite id="s1" name="Saucedemo" source="C:\laragon\www\test\tests\saucedemo.robot">
+<kw name="Open SauceDemo" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-11-05T06:50:58.861944" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E84DE08EC0&gt;</msg>
+<var>${options}</var>
+<arg>__import__('selenium.webdriver', fromlist=['ChromeOptions']).ChromeOptions()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-11-05T06:50:58.850060" elapsed="0.011972"/>
+</kw>
+<if>
+<branch type="IF" condition="${HEADLESS}">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument("--headless=new")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-11-05T06:50:58.862838" elapsed="0.000044"/>
+</kw>
+<msg time="2026-11-05T06:50:58.862967" level="FAIL">Invalid IF condition: Evaluating expression '${HEADLESS}' failed: Variable '${HEADLESS}' not found.</msg>
+<status status="FAIL" start="2026-11-05T06:50:58.862234" elapsed="0.000807">Invalid IF condition: Evaluating expression '${HEADLESS}' failed: Variable '${HEADLESS}' not found.</status>
+</branch>
+<status status="FAIL" start="2026-11-05T06:50:58.862185" elapsed="0.000912">Invalid IF condition: Evaluating expression '${HEADLESS}' failed: Variable '${HEADLESS}' not found.</status>
+</if>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument("--window-size=1440,1000")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-11-05T06:50:58.863303" elapsed="0.000027"/>
+</kw>
+<kw name="Open Browser">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<status status="NOT RUN" start="2026-11-05T06:50:58.863514" elapsed="0.000026"/>
+</kw>
+<kw name="Set Selenium Implicit Wait">
+<arg>${IMPLICIT_WAIT}</arg>
+<status status="NOT RUN" start="2026-11-05T06:50:58.863663" elapsed="0.000016"/>
+</kw>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" start="2026-11-05T06:50:58.863751" elapsed="0.000016"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>id=user-name</arg>
+<arg>${EXPLICIT_WAIT}</arg>
+<status status="NOT RUN" start="2026-11-05T06:50:58.863832" elapsed="0.000012"/>
+</kw>
+<status status="FAIL" start="2026-11-05T06:50:58.849142" elapsed="0.014838">Invalid IF condition: Evaluating expression '${HEADLESS}' failed: Variable '${HEADLESS}' not found.</status>
+</kw>
+<test id="s1-t1" name="${testcase_name}" line="14">
+<status status="FAIL" start="2026-11-05T06:50:58.864358" elapsed="0.000606">Parent suite setup failed:
+Invalid IF condition: Evaluating expression '${HEADLESS}' failed: Variable '${HEADLESS}' not found.</status>
+</test>
+<kw name="Close All Browsers" type="TEARDOWN">
+<msg time="2026-11-05T06:50:58.867912" level="FAIL">No keyword with name 'Close All Browsers' found.</msg>
+<status status="FAIL" start="2026-11-05T06:50:58.867828" elapsed="0.000161">No keyword with name 'Close All Browsers' found.</status>
+</kw>
+<doc>SauceDemo UI tests using Excel data and YAML configuration.
+Run: robot --outputdir results tests/saucedemo.robot</doc>
+<status status="FAIL" start="2026-11-05T06:50:58.403289" elapsed="0.464801">Suite setup failed:
+Invalid IF condition: Evaluating expression '${HEADLESS}' failed: Variable '${HEADLESS}' not found.
+
+Also suite teardown failed:
+No keyword with name 'Close All Browsers' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Saucedemo" id="s1" pass="0" fail="1" skip="0">Saucedemo</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-11-05T06:50:58.793702" level="ERROR">Error in file 'C:\laragon\www\test\tests\saucedemo.robot' on line 4: Variable '${EXPLICIT_WAIT}' not found.</msg>
+<msg time="2026-11-05T06:50:58.796391" level="ERROR">Error in file 'C:\laragon\www\test\tests\saucedemo.robot' on line 5: Importing library 'DataDriver' failed: ModuleNotFoundError: No module named 'DataDriver'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\laragon\www\test\.venv\Scripts\robot.exe
+  C:\laragon\bin\python\python-3.13\python313.zip
+  C:\laragon\bin\python\python-3.13\DLLs
+  C:\laragon\bin\python\python-3.13\Lib
+  C:\laragon\bin\python\python-3.13
+  C:\laragon\www\test\.venv
+  C:\laragon\www\test\.venv\Lib\site-packages</msg>
+<msg time="2026-11-05T06:50:58.847113" level="ERROR">Error in file 'C:\laragon\www\test\tests\saucedemo.robot' on line 8: Processing variable file 'C:\laragon\www\test\config_variables.py' with arguments ['config.yaml'] failed: Importing variable file 'C:\laragon\www\test\config_variables.py' failed: ModuleNotFoundError: No module named 'yaml'
+Traceback (most recent call last):
+  File "C:\laragon\www\test\config_variables.py", line 3, in &lt;module&gt;
+    import yaml
+PYTHONPATH:
+  C:\laragon\www\test
+  C:\laragon\www\test\.venv\Scripts\robot.exe
+  C:\laragon\bin\python\python-3.13\python313.zip
+  C:\laragon\bin\python\python-3.13\DLLs
+  C:\laragon\bin\python\python-3.13\Lib
+  C:\laragon\bin\python\python-3.13
+  C:\laragon\www\test\.venv
+  C:\laragon\www\test\.venv\Lib\site-packages</msg>
+</errors>
+</robot>

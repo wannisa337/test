@@ -1,0 +1,15 @@
+# Environment and browser configuration
+env:
+  url: "https://www.saucedemo.com/"
+  browser: "chrome"
+  headless: false
+
+timeout:
+  implicit_wait: "10s"
+  explicit_wait: "15s"
+
+default_user:
+  standard: "standard_user"
+  locked: "locked_out_user"
+
+default_password: "secret_sauce"

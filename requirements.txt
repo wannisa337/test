@@ -1,0 +1,5 @@
+robotframework>=7.0
+robotframework-seleniumlibrary>=6.0
+robotframework-datadriver[XLS]>=1.11
+PyYAML>=6.0
+openpyxl>=3.1
